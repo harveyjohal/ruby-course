@@ -18,6 +18,7 @@ line3 = $stdin.gets.chomp
 
 puts "I'm going to write these to #{filename}."
 
+# Takes the output from user input(stdin) and writes it to the file seperated by a newline.
 target.write(line1)
 target.write("\n")
 target.write(line2)
@@ -28,4 +29,5 @@ target.write("\n")
 puts "Then we reverse the output to #{rfilename}"
 target.close
 
+# Opens the rfilename in write mode, then writes the contents of filename in reverse to rfilename.
 File.open("#{rfilename}","w") {|o| o.puts File.readlines("#{filename}").reverse}
