@@ -44,6 +44,17 @@ end
 puts build_database(filename)
 
 # Home work
+# Search for the first name
 # def find_my_join_date(db, first_name, last_name)
 #  return joined_date
 # end
+
+def find_my_join_date(db, first_name, last_name)
+  x = db.select { |a| a[0] == first_name }
+  puts "#{x[0] [4]}"
+  return x[4]
+end
+
+mydb = build_database(filename)
+
+puts find_my_join_date(mydb, "Stefania", "Cardenas")
